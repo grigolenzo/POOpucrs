@@ -1,4 +1,7 @@
 import PromptSync from "prompt-sync";
+import { validate } from "bycontract";  
+
+
 const prompt = PromptSync({sigint: true});   
 
 let idades = [];

@@ -38,4 +38,20 @@ class Aluno2{
     aprovado(){
         return this.media() >= 6;
     }
-}
+} 
+
+let al1 = new Aluno2();
+al1.matricula = 123;
+al1.nome = "João";
+al1.notaP1 = 7;
+al1.notaP2 = 8;
+
+let situacao = "";
+
+
+if(al1.aprovado()){situacao = "Aprovado";}
+else{situacao = "Reprovado";}
+
+console.log(`Aluno: ${al1.nome}`)
+console.log(`Média: ${al1.media()}`)
+console.log(`Situação: ${situacao}`)

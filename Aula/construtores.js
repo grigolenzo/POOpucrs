@@ -1,15 +1,15 @@
 /* Método construtor, roda automaticamente quando cria a instancia do objeto (let a1 = new Aluno(1025,'jose dias')) passamos por parametro o numero de matricula e o nome, atribuindo os valores para as propriedades do aluno em especifico sendo criado no momento, passa a ser impossivel criar um objeto sem esses valores   */
 
+import { validate } from "bycontract"; 
+
 class Aluno{
-    matricula;
-    nome;
-    notaP1;
-    notaP2;
+    #matricula;
+    #nome;
+    #notaP1;
+    #notaP2;
 
     constructor(matricula, nome){ /* Ele exige matricula e nome por parametros */
-        validate(arguments,[
-            "Number,","String"
-        ]);
+        validate(arguments,["number","string"]);
 
         if(matricula<1000 || matricula >9999){
             matricula = -1;
@@ -59,5 +59,12 @@ class Aluno{
     }
 }
 
+let a1 = new Aluno(1025, 'Jose Dias');
 
- 
+let a2 = new Aluno(1026,'Chris Goes');
+
+a2.notaP1 = 6.8;
+a2.notaP2 = 9.0;
+
+console.log(a1.toString());
+console.log(a2.toString());
